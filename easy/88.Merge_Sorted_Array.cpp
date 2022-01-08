@@ -10,8 +10,6 @@ public:
         for (int i = 0; i < n; i++)
             nums1[i + m] = nums2[i];
         sort(nums1.begin(), nums1.end());
-        for (int i = 0; i < m + n; i++)
-            cout << nums1[i] << " ";
     }
 };
 
