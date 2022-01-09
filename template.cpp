@@ -15,9 +15,7 @@ int main()
     vector<int>::iterator it;
 
     for (it = input.begin(); it != input.end(); ++it)
-    {
         cout << *it << " ";
-    }
 
     return 0;
 }
