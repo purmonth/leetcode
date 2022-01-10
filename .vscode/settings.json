@@ -51,6 +51,7 @@
         "streambuf": "cpp",
         "typeinfo": "cpp",
         "ios": "cpp",
-        "__hash_table": "cpp"
+        "__hash_table": "cpp",
+        "queue": "cpp"
     }
 }
