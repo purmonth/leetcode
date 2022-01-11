@@ -52,6 +52,9 @@
         "typeinfo": "cpp",
         "ios": "cpp",
         "__hash_table": "cpp",
-        "queue": "cpp"
-    }
+        "queue": "cpp",
+        "unordered_set": "cpp"
+    },
+    "C_Cpp.errorSquiggles": "Disabled",
+    "C_Cpp.clang_format_fallbackStyle": "LLVM"
 }
