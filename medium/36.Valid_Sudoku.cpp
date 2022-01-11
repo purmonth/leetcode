@@ -43,7 +43,7 @@ class Solution {
     return true;
   }
 
-public:
+ public:
   bool isValidSudoku(vector<vector<char>> &board) {
     bool output = true;
     for (int i = 0; i < 9; i++) {

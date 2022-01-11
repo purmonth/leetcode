@@ -56,5 +56,5 @@
         "unordered_set": "cpp"
     },
     "C_Cpp.errorSquiggles": "Disabled",
-    "C_Cpp.clang_format_fallbackStyle": "LLVM"
+    "C_Cpp.clang_format_fallbackStyle": "Google"
 }
