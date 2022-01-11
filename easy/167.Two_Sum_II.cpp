@@ -16,8 +16,8 @@ public:
             int sum = nums[low] + nums[high];
             if (sum == target)
             {
-                twoSum.push_back(low);
-                twoSum.push_back(high);
+                twoSum.push_back(low + 1);
+                twoSum.push_back(high + 1);
                 return twoSum;
             }
             if (sum > target)
