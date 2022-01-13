@@ -1,11 +1,31 @@
-#include<iostream>
+#include <iostream>
+
 using namespace std;
+
+/**
+ * definition for singly-linked list.
+ *
+ */
+
 struct ListNode {
     int val;
     ListNode *next;
-    ListNode() : val(0), next(nullptr) {}
-    ListNode(int x) : val(x), next(nullptr) {}
-    ListNode(int x, ListNode *next) : val(x), next(next) {}
+    ListNode(int x) : val(x), next(NULL) {}
+};
+
+class Solution {
+public:
+    ListNode* reverseList(ListNode* head) {
+        ListNode* newHead = NULL;
+        while(head!=NULL)
+        {
+            ListNode* next = head->next;
+            head->next = newHead;
+            newHead = head;
+            head = next;
+        }
+        return newHead;
+    }
 };
 
 void traverseNode(ListNode* head)
@@ -16,24 +36,6 @@ void traverseNode(ListNode* head)
         head = head->next;
     }
 }
-
-class Solution {
-public:
-    ListNode* middleNode(ListNode* head) {
-        ListNode *p = head;
-        int counter = 0;
-        cout << endl;
-        while(p != NULL){
-            p = p->next;
-            counter ++;
-        }
-        counter /= 2;
-        while(counter -- > 0){
-            head = head->next;
-        }
-        return head;
-    }
-};
 
 int main()
 {
@@ -50,9 +52,7 @@ int main()
     traverseNode(node1);
 
     Solution sol;
-
-    ListNode* newHead = sol.middleNode(node1);
-    
+    ListNode* newHead = sol.reverseList(node1);
     traverseNode(newHead);
 
     return 0;
