@@ -25,6 +25,7 @@ void traverseNode(ListNode* head)
         cout << head->val << " ";
         head = head->next;
     }
+    cout << endl;
 }
 
 int main()
