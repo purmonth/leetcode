@@ -59,7 +59,8 @@
         "__tree": "cpp",
         "set": "cpp",
         "bitset": "cpp",
-        "chrono": "cpp"
+        "chrono": "cpp",
+        "stack": "cpp"
     },
     "C_Cpp.errorSquiggles": "Disabled",
     "C_Cpp.clang_format_fallbackStyle": "Google"
