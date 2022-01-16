@@ -15,17 +15,17 @@ struct TreeNode {
 };
 
 class Solution {
-  void preorderTraversal(TreeNode *root, vector<int> &ans) {
+  void inorderTraversal(TreeNode *root, vector<int> &ans) {
     if (root == nullptr) return;
+    inorderTraversal(root->left, ans);
     ans.push_back(root->val);
-    preorderTraversal(root->left, ans);
-    preorderTraversal(root->right, ans);
+    inorderTraversal(root->right, ans);
   }
 
  public:
-  vector<int> preorderTraversal(TreeNode *root) {
+  vector<int> inorderTraversal(TreeNode *root) {
     vector<int> ans;
-    preorderTraversal(root, ans);
+    inorderTraversal(root, ans);
     return ans;
   }
 };
@@ -78,7 +78,7 @@ int main() {
   node3->right = NULL;
   Solution sol;
   vector<int> output;
-  output = sol.preorderTraversal(node1);
+  output = sol.inorderTraversal(node1);
   for (int i = 0; i < output.size(); i++) {
     cout << output[i] << " ";
   }
