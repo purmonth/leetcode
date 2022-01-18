@@ -6,10 +6,14 @@ class Solution {
  public:
 };
 
-int main() {
-  string s = "abcabcbb";
+void traverse_string(string s) {
   for (int i = 0; i < s.length(); i++) {
     cout << s[i] << " ";
   }
+}
+
+int main() {
+  string s = "abcabcbb";
+  traverse_string(s);
   return 0;
 }
