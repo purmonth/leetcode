@@ -15,19 +15,19 @@ struct TreeNode {
 
 class Solution {
  public:
-  TreeNode *invertTree(TreeNode *root) {
-    if (root == NULL) return NULL;
-    TreeNode *left;
-    TreeNode *right;
-    left = invertTree(root->left);
-    right = invertTree(root->right);
-    root->left = right;
-    root->right = left;
-
-    return root;
+  bool hasPathSum(TreeNode *root, int targetSum) {
+    if (root == NULL) return false;
+    targetSum -= root->val;
+    if (root->left == NULL && root->right == NULL) {
+      if (targetSum == 0)
+        return true;
+      else
+        return false;
+    }
+    return hasPathSum(root->left, targetSum) ||
+           hasPathSum(root->right, targetSum);
   }
 };
-
 
 void Preorder(TreeNode *current) {
   if (current) {
@@ -66,31 +66,18 @@ void Levelorder(TreeNode *head) {
 }
 
 int main() {
-  TreeNode *node1 = new TreeNode(4);
+  TreeNode *node1 = new TreeNode(1);
   TreeNode *node2 = new TreeNode(2);
-  TreeNode *node3 = new TreeNode(7);
-  TreeNode *node4 = new TreeNode(1);
-  TreeNode *node5 = new TreeNode(3);
-  TreeNode *node6 = new TreeNode(6);
-  TreeNode *node7 = new TreeNode(9);
+  TreeNode *node3 = new TreeNode(3);
   node1->left = node2;
   node1->right = node3;
-  node2->left = node4;
-  node2->right = node5;
-  node3->left = node6;
-  node3->right = node7;
-  node4->left = NULL;
-  node4->right = NULL;
-  node5->left = NULL;
-  node5->right = NULL;
-  node6->left = NULL;
-  node6->right = NULL;
-  node7->left = NULL;
-  node7->right = NULL;
+  node2->left = NULL;
+  node2->right = NULL;
+  node3->left = NULL;
+  node3->right = NULL;
 
   Solution sol;
-  TreeNode *output = sol.invertTree(node1);
-  Levelorder(output);
-
+  int target = 5;
+  cout << (sol.hasPathSum(node1, target) ? "true" : "false") << endl;
   return 0;
 }
